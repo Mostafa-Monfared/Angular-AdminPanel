@@ -1,0 +1,31 @@
+app-sidebar{
+    position: fixed; /* ثابت کردن سایدبار */
+    top: 0; /* از بالا شروع می‌شود */
+    right: 0; /* از سمت راست شروع می‌شود */
+    height: 100vh; /* ارتفاع برابر ارتفاع صفحه */
+    overflow-y: auto; /* فعال کردن اسکرول در صورت لزوم */
+}
+
+app-sidebar::-webkit-scrollbar {
+    width:10px;
+    height: 50px;
+    background-color:#cedbe8;
+    border-radius: 10px;
+    direction:rtl;
+    position: absolute;
+    left: 0;
+
+}
+
+app-sidebar::-webkit-scrollbar-track {
+    box-shadow: inset 0px -1px 13px #e2e2ec;
+    border-radius: 10px;
+    height: 50px;
+}
+
+app-sidebar::-webkit-scrollbar-thumb {
+    background: #9c9c9c;
+    border-radius: 10px;
+    height: 50px;
+
+}

@@ -1,0 +1,9 @@
+ul.navbar-nav > li > a ,
+ul.nav > li > a {
+    display: flex;
+}
+
+a>div{
+    margin-left: 10px;
+}
+
