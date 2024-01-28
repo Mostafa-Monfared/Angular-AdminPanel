@@ -13,7 +13,7 @@
                                 <div class="d-flex justify-content-end">
                                     <div
                                         class="lh-1 text-white bg-primary rounded-circle p-2 d-flex align-items-center justify-content-center">
-                                        <i class="bi bi-bell fs-7"></i>
+                                        <i class="bi bi-bell fs-5"></i>
                                     </div>
                                 </div>
                             </div>
@@ -22,11 +22,12 @@
                             <div class="col-12">
                                 <div class="d-flex align-items-center mt-3">
                                     <span
-                                        class="lh-1 me-3 bg-danger-subtle text-danger rounded-circle p-1 d-flex align-items-center justify-content-end">
-                                        <i class="bi bi-arrow-right-short bsb-rotate-45"></i>
+                                    [ngClass]="{'bg-success-subtle  , text-success , bsb-rotate-n45': PercentageDifferenceSales() > 0, 'bg-danger-subtle , text-danger , bsb-rotate-45': PercentageDifferenceSales() < 0}"
+                                    class="lh-1  rounded-circle p-1 d-flex align-items-center justify-content-end">
+                                        <i class="bi bi-arrow-right-short"></i>
                                     </span>
-                                    <div>
-                                        <p class="fs-7 mb-0">-119%</p>
+                                    <div class="text-right mr-5">
+                                        <p class="fs-7 mb-0 dir-ltr">{{ PercentageDifferenceSales()}}%</p>
                                         <p class="fs-7 mb-0 text-secondary">since last week</p>
                                     </div>
                                 </div>
@@ -47,7 +48,7 @@
                                 <div class="d-flex justify-content-end">
                                     <div
                                         class="lh-1 text-white bg-primary rounded-circle p-2 d-flex align-items-center justify-content-center">
-                                        <i class="bi bi-currency-dollar fs-7"></i>
+                                        <i class="bi bi-currency-dollar fs-5"></i>
                                     </div>
                                 </div>
                             </div>
@@ -56,11 +57,12 @@
                             <div class="col-12">
                                 <div class="d-flex align-items-center mt-3">
                                     <span
-                                        class="lh-1 me-3 bg-success-subtle text-success rounded-circle p-1 d-flex align-items-center justify-content-center">
-                                        <i class="bi bi-arrow-right-short bsb-rotate-n45"></i>
+                                    [ngClass]="{'bg-success-subtle  , text-success , bsb-rotate-n45': PercentageDifferenceIncome() > 0, 'bg-danger-subtle , text-danger , bsb-rotate-45': PercentageDifferenceIncome() < 0}"
+                                        class="lh-1  rounded-circle p-1 d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-arrow-right-short"></i>
                                     </span>
-                                    <div>
-                                        <p class="fs-7 mb-0">+26%</p>
+                                    <div class="text-right mr-5">
+                                        <p class="fs-7 mb-0 dir-ltr">{{PercentageDifferenceIncome()}}%</p>
                                         <p class="fs-7 mb-0 text-secondary">since last week</p>
                                     </div>
                                 </div>
@@ -81,7 +83,7 @@
                                 <div class="d-flex justify-content-end">
                                     <div
                                         class="lh-1 text-white bg-primary rounded-circle p-2 d-flex align-items-center justify-content-center">
-                                        <i class="bi bi-person fs-7"></i>
+                                        <i class="bi bi-person fs-5"></i>
                                     </div>
                                 </div>
                             </div>
@@ -90,11 +92,12 @@
                             <div class="col-12">
                                 <div class="d-flex align-items-center mt-3">
                                     <span
-                                        class="lh-1 me-3 bg-success-subtle text-success rounded-circle p-1 d-flex align-items-center justify-content-center">
-                                        <i class="bi bi-arrow-right-short bsb-rotate-n45"></i>
+                                        [ngClass]="{'bg-success-subtle  , text-success , bsb-rotate-n45': PercentageDifferenceVisitors() > 0, 'bg-danger-subtle , text-danger , bsb-rotate-45': PercentageDifferenceVisitors() < 0}"
+                                        class="lh-1  rounded-circle p-1 d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-arrow-right-short "></i>
                                     </span>
-                                    <div>
-                                        <p class="fs-7 mb-0">+69%</p>
+                                    <div class="text-right mr-5">
+                                        <p class="fs-7 mb-0 dir-ltr">{{PercentageDifferenceVisitors()}}%</p>
                                         <p class="fs-7 mb-0 text-secondary">since last week</p>
                                     </div>
                                 </div>
@@ -115,7 +118,7 @@
                                 <div class="d-flex justify-content-end">
                                     <div
                                         class="lh-1 text-white bg-primary rounded-circle p-2 d-flex align-items-center justify-content-center">
-                                        <i class="bi bi-cart fs-7"></i>
+                                        <i class="bi bi-cart fs-5"></i>
                                     </div>
                                 </div>
                             </div>
@@ -123,12 +126,13 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="d-flex align-items-center mt-3">
-                                    <span
-                                        class="lh-1 me-3 bg-danger-subtle text-danger rounded-circle p-1 d-flex align-items-center justify-content-center">
-                                        <i class="bi bi-arrow-right-short bsb-rotate-45"></i>
+                                    <span 
+                                    [ngClass]="{'bg-success-subtle  , text-success , bsb-rotate-n45': PercentageDifferenceOrders() > 0, 'bg-danger-subtle , text-danger , bsb-rotate-45': PercentageDifferenceOrders() < 0}"
+                                        class="lh-1  rounded-circle p-1 d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-arrow-right-short"></i>
                                     </span>
-                                    <div>
-                                        <p class="fs-7 mb-0">-21%</p>
+                                    <div class="text-right mr-5">
+                                        <p class="fs-7 mb-0 dir-ltr">{{PercentageDifferenceOrders()}}%</p>
                                         <p class="fs-7 mb-0 text-secondary">since last week</p>
                                     </div>
                                 </div>
