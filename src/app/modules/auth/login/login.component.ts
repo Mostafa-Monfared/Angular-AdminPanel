@@ -31,7 +31,7 @@ export class LoginComponent implements OnDestroy {
   }
 
   login() {
-    this.router.navigate(["/dashboard"]);
+    this.router.navigate(["/layout"]);
 
 
 
