@@ -16,7 +16,6 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
     AppRoutingModule,
     SharedModule
   ],
-  providers: [    SidebarComponent  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
