@@ -3,9 +3,9 @@ import { Router } from '@angular/router';
 import { tap, delay, finalize, catchError } from 'rxjs/operators';
 import { of, Subscription } from 'rxjs';
 import {
-  FormGroup,
-  FormBuilder,
-  FormControl
+  UntypedFormGroup,
+  UntypedFormBuilder,
+  UntypedFormControl
 } from '@angular/forms';
 
 @Component({
@@ -16,17 +16,17 @@ import {
 export class LoginComponent implements OnDestroy {
   error: string;
   isLoading: boolean;
-  loginForm: FormGroup;
+  loginForm: UntypedFormGroup;
   private sub = new Subscription();
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private router: Router) {
       this.buildForm();
   }
   private buildForm(): void {
-    this.loginForm = new FormGroup({
-      username: new FormControl(''),
-      password: new FormControl('')
+    this.loginForm = new UntypedFormGroup({
+      username: new UntypedFormControl(''),
+      password: new UntypedFormControl('')
     });
   }
 
