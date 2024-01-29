@@ -11,21 +11,6 @@
   },
   "private": true,
   "dependencies": {
-<<<<<<< HEAD
-    "@angular/animations": "^15.1.0",
-    "@angular/common": "^15.1.0",
-    "@angular/compiler": "^15.1.0",
-    "@angular/core": "^15.1.0",
-    "@angular/forms": "^15.1.0",
-    "@angular/platform-browser": "^15.1.0",
-    "@angular/platform-browser-dynamic": "^15.1.0",
-    "@angular/router": "^15.1.0",
-    "ajv": "^8.12.0",
-    "apexcharts": "^3.45.2",
-    "bootstrap": "^5.3.2",
-    "ng-apexcharts": "^1.8.0",
-    "npm": "^9.1.2",
-=======
     "@angular/animations": "~9.1.13",
     "@angular/common": "~9.1.13",
     "@angular/compiler": "~9.1.13",
@@ -37,7 +22,6 @@
     "apexcharts": "^3.45.2",
     "bootstrap": "^5.3.2",
     "ng-apexcharts": "^1.8.0",
->>>>>>> 5186438 (Add apexchart)
     "rxjs": "~6.5.4",
     "tslib": "^2.6.2",
     "zone.js": "~0.11.4"
