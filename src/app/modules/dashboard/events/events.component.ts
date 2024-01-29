@@ -1,10 +1,18 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ChartComponent } from "ng-apexcharts";
-
 import {
   ApexNonAxisChartSeries,
   ApexResponsive,
-  ApexChart
+  ApexChart,
+  ApexAxisChartSeries,
+  ApexDataLabels,
+  ApexPlotOptions,
+  ApexYAxis,
+  ApexLegend,
+  ApexStroke,
+  ApexXAxis,
+  ApexFill,
+  ApexTooltip
 } from "ng-apexcharts";
 
 export type ChartOptions = {
@@ -47,6 +55,7 @@ export class EventsComponent implements OnInit {
         }
       ]
     };
+
    }
 
   ngOnInit(): void {
