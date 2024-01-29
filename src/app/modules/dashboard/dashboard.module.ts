@@ -9,6 +9,7 @@ import { DashboardRouterComponent } from './dashboard-router/dashboard-router.co
 import { EventsComponent } from './events/events.component';
 import { OverviewComponent } from './overview/overview.component';
 import { TableCalendarComponent } from './table-calendar/table-calendar.component';
+import { NgApexchartsModule } from 'ng-apexcharts';
 
 
 @NgModule({
@@ -16,7 +17,9 @@ import { TableCalendarComponent } from './table-calendar/table-calendar.componen
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    SharedModule
+    SharedModule,
+    NgApexchartsModule
+
   ]
 })
 export class DashboardModule { }
