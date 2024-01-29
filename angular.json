@@ -29,6 +29,7 @@
               "src/styles.css"
             ],
             "scripts": [
+<<<<<<< HEAD
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
             ],
             "vendorChunk": true,
@@ -37,6 +38,11 @@
             "sourceMap": true,
             "optimization": false,
             "namedChunks": true
+=======
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "node_modules/apexcharts/dist/apexcharts.min.js"
+            ]
+>>>>>>> 5186438 (Add apexchart)
           },
           "configurations": {
             "production": {
