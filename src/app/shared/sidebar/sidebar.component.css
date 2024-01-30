@@ -1,12 +1,19 @@
 ul.navbar-nav > li > a ,
 ul.nav > li > a {
     display: flex;
+    align-items: center;
 }
-ul > :first-child{
-    margin-top: 5%;
+
+ul.navbar-nav > :first-child{
+    margin-top: 30%;
 }
+
 a>div{
     margin-left: 10px;
+}
+
+a>div>i{
+    font-size: 20px;
 }
 
 hr{
@@ -19,5 +26,15 @@ hr{
     opacity: .25;
     overflow: hidden;
     padding: 0;
+    position: absolute;
+    width: 100%;
+}
+
+hr.top{
+    top:10px;
+}
+
+li.nav-item > i {
+    font-size: 20px;
 }
 
