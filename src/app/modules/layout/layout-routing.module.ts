@@ -13,7 +13,11 @@ const routes: Routes = [{
       path: '',
       redirectTo: '/layout/dashboard',
       pathMatch: 'full'
-    }
+    },
+    {
+      path: 'users',
+      loadChildren: () => import('../users/users.module').then(m => m.UsersModule)
+    },
 ]}];
 
 @NgModule({
