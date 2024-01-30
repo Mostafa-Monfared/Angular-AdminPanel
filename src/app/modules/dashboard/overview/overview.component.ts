@@ -44,26 +44,27 @@ export class OverviewComponent implements OnInit {
     this.chartOptions = {
       series: [
         {
-          name: "Net Profit",
-          data: [44, 55, 57, 56, 61, 58, 63, 60, 66]
+          name: "سود خالص",
+          data: [44, 55, 57, 56, 61, 58, 63, 60, 66 , 25 , 34 , 53]
         },
         {
-          name: "Revenue",
-          data: [76, 85, 101, 98, 87, 105, 91, 114, 94]
+          name: "درآمد",
+          data: [76, 85, 101, 98, 87, 105, 91, 114, 94 , 115 , 96 , 118]
         },
         {
-          name: "Free Cash Flow",
-          data: [35, 41, 36, 26, 45, 48, 52, 53, 41]
+          name: "نقدینگی",
+          data: [35, 41, 36, 26, 45, 48, 52, 53, 41 , 25 , 56 , 75]
         }
       ],
       chart: {
         type: "bar",
-        height: 350
+        height: 400,
+        fontFamily : 'vazirWithoutLatin'
       },
       plotOptions: {
         bar: {
           horizontal: false,
-          columnWidth: "55%",
+          columnWidth: "60%",
         }
       },
       dataLabels: {
@@ -71,37 +72,28 @@ export class OverviewComponent implements OnInit {
       },
       stroke: {
         show: true,
-        width: 2,
+        width: 3,
         colors: ["transparent"]
       },
       xaxis: {
         categories: [
-          "Feb",
-          "Mar",
-          "Apr",
-          "May",
-          "Jun",
-          "Jul",
-          "Aug",
-          "Sep",
-          "Oct"
+          "فروردین",
+          "اردیبهشت",
+          "خرداد",
+          "تیر",
+          "مرداد",
+          "شهریور",
+          "مهر ",
+          "آبان",
+          "آذر",
+          "دی",
+          "بهمن",
+          "اسفند",
         ]
-      },
-      yaxis: {
-        title: {
-          text: "$ (thousands)"
-        }
       },
       fill: {
         opacity: 1
       },
-      tooltip: {
-        y: {
-          formatter: function(val) {
-            return "$ " + val + " thousands";
-          }
-        }
-      }
     };
    }
 
