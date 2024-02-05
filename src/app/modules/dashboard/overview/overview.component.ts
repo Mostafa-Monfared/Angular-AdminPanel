@@ -72,7 +72,7 @@ export class OverviewComponent implements OnInit {
       },
       stroke: {
         show: true,
-        width: 3,
+        width: 2,
         colors: ["transparent"]
       },
       xaxis: {
@@ -91,10 +91,21 @@ export class OverviewComponent implements OnInit {
           "اسفند",
         ]
       },
-      fill: {
-        opacity: 1
+      legend: {
+        position: "bottom",
+        itemMargin: {
+          horizontal: 10,
+          vertical: 4,
+        },
+        markers: {
+          width: 12,
+          height: 12,
+          radius: 4,
+          offsetX: 4,
+        },
       },
     };
+    
    }
 
   ngOnInit(): void {
