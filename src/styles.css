@@ -16,8 +16,20 @@ body{
     margin-right: 5px;
 }
 
+.ml-5 {
+    margin-left: 5px;
+}
+
 .mr-10 {
     margin-right: 10px;
+}
+
+.mt-10{
+    margin-top: 10px;
+}
+
+.mt-5{
+    margin-top: 5px;
 }
 
 .text-right{
@@ -30,4 +42,25 @@ body{
 
 .pr-0{
     padding-right: 0;
+}
+
+.btn-large{
+    width: 200px;
+    font-size: 14px;
+    padding: 5px;
+    text-align: center;
+}
+
+.btn-small{
+    width: 95px;
+    font-size: 14px;
+    padding: 5px;
+    text-align: center;
+}
+
+.btn-medium{
+    width: 120px;
+    font-size: 14px;
+    padding: 5px;
+    text-align: center;
 }

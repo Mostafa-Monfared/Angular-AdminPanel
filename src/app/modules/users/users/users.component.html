@@ -1,13 +1,10 @@
-<section class="bg-light">
+<section>
     <div class="container">
-        <div class="row ">
-            <div class="col-12">
+        <div class="row  ">
+            <div class="col-12 ">
                 <div class="row ">
                     <div class="col-12">
-                        <div class=" card widget-card border-light shadow-sm">
-                            <div class=" bg-transparent p-4 border-light-subtle">
-                                <h5 class="card-title widget-card-title m-0">فیلتر کاربر</h5>
-                            </div>
+                        <div class=" card widget-card border-light mt-5 shadow-sm">
                             <div class="card-body p-4">
                                 <form class="row g-3">
                                     <div class="col-md-4">
@@ -33,23 +30,26 @@
                                         <label for="validationDefault03" class="form-label">شهر</label>
                                         <input type="text" class="form-control" id="validationDefault03" required>
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col-md-6">
                                         <label for="validationDefault04" class="form-label">وضعیت</label>
                                         <select class="form-select" id="validationDefault04" required>
                                             <option selected disabled value="">انتخاب کنید</option>
                                             <option>...</option>
                                         </select>
                                     </div>
-                                    <div class="col-md-3">
-                                        <label for="validationDefault05" class="form-label">Zip</label>
-                                        <input type="text" class="form-control" id="validationDefault05" required>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <label for="message" class="form-label"> توضیحات<span class="text-danger">*</span></label>
-                                        <textarea class="form-control" id="message" name="message" rows="3" required></textarea>
-                                    </div>
-                                    <div class="col-6">
-                                        <button class="btn btn-primary " type="submit">ثبت کاربر</button>
+                                    <div class="col-12 d-flex">
+                                        <div class="col-6">
+                                            <button class="btn btn-large btn-outline-success" type="submit">
+                                              <!-- <i class="bi bi-person-plus"></i> -->
+                                              <!-- <i class="bi bi-plus-lg"></i> -->
+                                              <i class="bi bi-plus-square ml-5"></i>
+                                              <span>افزودن کاربر</span> 
+                                            </button>
+                                        </div>
+                                        <div class="col-6 d-flex justify-content-end">
+                                            <button class="btn btn-outline-danger mr-10 btn-small" type="submit">لغو فیلتر</button>
+                                            <button class="btn btn-outline-primary mr-10 btn-small" type="submit">جستجو کاربر</button>
+                                        </div>
                                     </div>                          
                                 </form>
                             </div>
@@ -60,4 +60,61 @@
         </div>
     </div>
 </section>
-<!-- <app-list-user></app-list-user> -->
+  <!-- Section - Bootstrap Brain Component -->
+<section>
+        <div class="container">
+          <div class="row gy-3 gy-md-4">
+            <div class="col-12 col-lg-12 mt-5">
+              <div class="row gy-3 gy-md-4">
+                <div class="col-12">
+                  <div class="card widget-card border-light shadow-sm">
+                    <div class="card-header bg-transparent p-4 border-light-subtle">
+                      <h5 class="card-title widget-card-title m-0">لیست کاربران</h5>
+                    </div>
+                    <div class="card-body">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">نام</th>
+                            <th scope="col">نام خانوادگی</th>
+                            <th scope="col">نام کاربری</th>
+                            <th scope="col">شهر</th>
+                            <th scope="col">وضعیت</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>محمد</td>
+                            <td>دهقانی</td>
+                            <td>@dehqni</td>
+                            <td>@dehqni</td>
+                            <td>@dehqni</td>
+                            <td>
+                                <a href=""><i class="bi bi-pencil-square"></i></a>
+                                <a href=""><i class="bi bi-trash"></i></a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>مصطفی</td>
+                            <td>اسماعیلی</td>
+                            <td>@monfared</td>
+                            <td>@monfared</td>
+                            <td>@monfared</td>
+                            <td>
+                                <a href=""><i class="bi bi-pencil-square"></i></a>
+                                <a href=""><i class="bi bi-trash"></i></a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+</section>
