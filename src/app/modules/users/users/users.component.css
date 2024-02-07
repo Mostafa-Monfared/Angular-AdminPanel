@@ -5,3 +5,8 @@ border-radius: 5px 0px 0px 5px !important;
 input#validationDefaultUsername{
     border-radius: 0 5px 5px 0 !important;
 }
+
+.tbl-icon{
+    font-size: 19px;
+    padding: 5px;
+}
