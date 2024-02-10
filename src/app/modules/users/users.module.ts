@@ -6,6 +6,8 @@ import { AddUserComponent } from './add-user/add-user.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { UsersComponent } from './users/users.component';
 import { ListUserComponent } from './list-user/list-user.component';
+import { FormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { ListUserComponent } from './list-user/list-user.component';
   ],
   imports: [
     CommonModule,
-    UsersRoutingModule
+    UsersRoutingModule,
+    FormsModule
+    
   ]
 })
 export class UsersModule { }

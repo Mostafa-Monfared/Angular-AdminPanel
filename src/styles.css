@@ -3,12 +3,92 @@
 
 @import url(../src/app/shared/theme/themes.scss);
 
-body{
+body {
     font-family: 'vazirWithoutLatin' !important;
 }
 
+/*============= Input =============== */
 
-.mr-auto{
+.input-form-control {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--bs-body-color);
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: var(--bs-body-bg);
+    background-clip: padding-box;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius);
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    margin-top: 7px;
+}
+
+.form-select-control {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: var(--bs-body-bg);
+    background-image: var(--bs-form-select-bg-img), var(--bs-form-select-bg-icon, none);
+    background-position: right 0.75rem center;
+    background-repeat: no-repeat;
+    background-size: 16px 12px;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius);
+    color: var(--bs-body-color);
+    display: block;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    width: 100%;
+    margin-top: 7px;
+}
+
+div>label {
+    font-size: 15px;
+    margin: 0 !important;
+    padding: 0;
+
+}
+
+input:focus,
+select.form-select-control:focus {
+    background-color: var(--bs-body-bg);
+    box-shadow: 0 0 0 0.1rem #0c94e41f;
+    border-color: #8695fe52;
+    color: var(--bs-body-color);
+    outline: 0;
+}
+
+/*============= Input =============== */
+
+/*============= button =============== */
+
+button.btn-outline-primary:hover,
+button.btn-outline-primary:active {
+    background-color: #3587dc !important;
+}
+
+button.btn-outline-primary {
+    border-color: #3587dc;
+}
+
+button.btn-outline-danger:hover,
+button.btn-outline-danger:active {
+    background-color: #dc4035 !important;
+}
+
+button.btn-outline-danger {
+    border-color: #dc4035;
+}
+
+/*============= button =============== */
+
+.mr-auto {
     margin-right: auto;
 }
 
@@ -24,41 +104,41 @@ body{
     margin-right: 10px;
 }
 
-.mt-10{
+.mt-10 {
     margin-top: 10px;
 }
 
-.mt-5{
+.mt-5 {
     margin-top: 5px;
 }
 
-.text-right{
+.text-right {
     text-align: right;
 }
 
-.dir-ltr{
+.dir-ltr {
     direction: ltr;
 }
 
-.pr-0{
+.pr-0 {
     padding-right: 0;
 }
 
-.btn-large{
+.btn-large {
     width: 200px;
     font-size: 14px;
     padding: 5px;
     text-align: center;
 }
 
-.btn-small{
+.btn-small {
     width: 95px;
     font-size: 14px;
     padding: 5px;
     text-align: center;
 }
 
-.btn-medium{
+.btn-medium {
     width: 120px;
     font-size: 14px;
     padding: 5px;
