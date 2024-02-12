@@ -5,11 +5,13 @@
 
 body {
     font-family: 'vazirWithoutLatin' !important;
+    overflow-y: auto;
 }
 
 /*============= Input =============== */
 
-.input-form-control {
+.input-form-control,
+.textarea-form-control {
     display: block;
     width: 100%;
     padding: 0.375rem 0.75rem;
@@ -56,6 +58,7 @@ div>label {
 }
 
 input:focus,
+textarea:focus,
 select.form-select-control:focus {
     background-color: var(--bs-body-bg);
     box-shadow: 0 0 0 0.1rem #0c94e41f;
@@ -86,44 +89,6 @@ button.btn-outline-danger {
     border-color: #dc4035;
 }
 
-/*============= button =============== */
-
-.mr-auto {
-    margin-right: auto;
-}
-
-.mr-5 {
-    margin-right: 5px;
-}
-
-.ml-5 {
-    margin-left: 5px;
-}
-
-.mr-10 {
-    margin-right: 10px;
-}
-
-.mt-10 {
-    margin-top: 10px;
-}
-
-.mt-5 {
-    margin-top: 5px;
-}
-
-.text-right {
-    text-align: right;
-}
-
-.dir-ltr {
-    direction: ltr;
-}
-
-.pr-0 {
-    padding-right: 0;
-}
-
 .btn-large {
     width: 200px;
     font-size: 14px;
@@ -143,4 +108,44 @@ button.btn-outline-danger {
     font-size: 14px;
     padding: 5px;
     text-align: center;
+}
+
+
+/*============= button =============== */
+
+.mr-auto {
+    margin-right: auto;
+}
+
+.mr-5 {
+    margin-right: 5px;
+}
+
+.ml-5 {
+    margin-left: 5px;
+}
+
+.mr-10 {
+    margin-right: 10px;
+}
+
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.dir-ltr {
+    direction: ltr;
+}
+
+.pr-0 {
+    padding-right: 0;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }

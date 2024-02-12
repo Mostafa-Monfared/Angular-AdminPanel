@@ -1,21 +1,21 @@
 <section class="pb-3 pb-md-4 pb-xl-5 bg-light">
-    <div class="container">
+    <div class="container ">
         <div class="row gy-3 gy-md-4">
-            <div class="col-12 col-lg-12 mt-10">
+            <div class="col-12 col-lg-12 ">
                 <div class="row gy-3 gy-md-4">
-                    <div class="col-12">
-                        <div class="card widget-card border-light shadow-sm">
-                            <div class="card-body p-4">
+                    <div class="col-12 ">
+                        <div class="card widget-card border-light shadow-sm mt-5">
+                            <div class="card-body p-4 ">
                                 <form class="row g-3" (ngSubmit)="submitForm()" #passwordForm="ngForm">
                                     <div class="col-md-6">
                                         <label for="inputEmail4" class="form-label">نام و نام خانوادگی*</label>
-                                        <input type="text" class="input-form-control" id="inputEmail4">
+                                        <input type="text" class="input-form-control" id="inputEmail4" required>
                                     </div>
                                     <div class="col-md-6">
                                         <label for="inputEmail4" class="form-label">نام کاربری*</label>
                                         <input type="text" class="input-form-control" id="inputEmail4">
                                     </div>
-                                    <div class="col-md-6">
+                                    <!-- <div class="col-md-6">
                                         <label for="password">رمز عبور*</label>
                                         <input type="password" id="password" class="input-form-control  "
                                             name="password" [(ngModel)]="password" #passwordInput="ngModel" required
@@ -46,27 +46,46 @@
                                                 عبور و تکرار آن باید
                                                 یکسان باشند.</div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <div class="col-6">
-                                        <label for="inputAddress" class="form-label">شماره تلفن*</label>
+                                        <label for="inputAddress" class="form-label">نام پدر *</label>
                                         <input type="text" class="input-form-control" id="inputAddress"
-                                            placeholder="1234 Main St">
-                                    </div>
-                                    <div class="col-6">
-                                        <label for="inputAddress" class="form-label">شماره تلفن همراه*</label>
-                                        <input type="text" class="input-form-control" id="inputAddress"
-                                            placeholder="1234 Main St">
-                                    </div>
-                                    <div class="col-md-12">
-                                        <label for="inputCity" class="form-label">ایمیل</label>
-                                        <input type="text" class="input-form-control" id="inputCity">
+                                            placeholder="09">
                                     </div>
                                     <div class="col-md-6">
-                                        <label for="inputCity" class="form-label">کد ملی*</label>
+                                        <label for="inputCity" class="form-label">تاریخ تولد*</label>
+                                        <input type="email" class="input-form-control" id="inputCity">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="inputCity" class="form-label"> کد ملی*</label>
+                                        <input type="email" class="input-form-control" id="inputCity">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="inputState" class="form-label">جنسیت*</label>
+                                        <select id="inputState" class="form-select-control form-select">
+                                            <option selected>انتخاب کنید</option>
+                                            <option> مرد</option>
+                                            <option> زن</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="inputCity" class="form-label">ایمیل*</label>
+                                        <input type="text" class="input-form-control" id="inputCity">
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="inputCity" class="form-label">شماره تلفن*</label>
                                         <input type="text" class="input-form-control" id="inputCity">
                                     </div>
                                     <div class="col-md-6">
                                         <label for="inputState" class="form-label">وضعیت*</label>
+                                        <select id="inputState" class="form-select-control form-select">
+                                            <option selected>انتخاب کنید</option>
+                                            <option>فعال</option>
+                                            <option>غیر فعال</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="inputState" class="form-label">شهر*</label>
                                         <select id="inputState" class="form-select-control form-select">
                                             <option selected>انتخاب کنید</option>
                                             <option>...</option>
@@ -74,23 +93,14 @@
                                     </div>
                                     <div class="col-12">
                                         <label for="inputCity" class="form-label">آدرس*</label>
-                                        <input type="text" class="input-form-control" id="inputCity">
+                                        <textarea name="inputCity" class="textarea-form-control" id="inputCity" cols="5" rows="2"></textarea>
                                     </div>
-
-                                    <div class="col-12">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="gridCheck">
-                                            <label class="form-check-label" for="gridCheck">
-                                                Check me out
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <button type="submit" class="btn btn-small btn-outline-primary"
-                                            [disabled]="passwordForm.invalid">ثبت کاربر</button>
-                                        <button class="btn btn-outline-danger mr-10 btn-small" type="submit"
+                                    <div class="col-12 text-left mt-5 ">
+                                        <button class="btn btn-outline-danger  btn-small" type="submit"
                                             (click)="onUsers($event)">
                                             انصراف</button>
+                                        <button type="submit" class="mr-10 btn btn-small btn-outline-primary"
+                                            [disabled]="passwordForm.invalid">ثبت کاربر</button>
                                     </div>
                                 </form>
                             </div>

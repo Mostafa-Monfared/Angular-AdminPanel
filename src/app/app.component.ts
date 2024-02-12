@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +6,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent {
-  title = 'AdminPanel';
+export class AppComponent implements AfterViewInit {
+  
+  ngAfterViewInit(): void {
+    this.checkScroll();
+  }
+
+  checkScroll(): void {
+    const windowHeight = window.innerHeight;
+    const contentHeight = document.documentElement.scrollHeight;
+
+    if (contentHeight > windowHeight) {
+      document.documentElement.style.overflow = 'auto';
+    } else {
+      document.documentElement.style.overflow = 'hidden';
+    }
+  }
 }

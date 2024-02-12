@@ -2,6 +2,14 @@
     margin: 0 !important;
 }
 
-header{
- height: 80px;
+.header-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-top: 0.4rem;
 }
+
+ .navbar{
+    height: 5rem;
+ }

@@ -1,3 +1,4 @@
+
 ul.navbar-nav > li > a ,
 ul.nav > li > a {
     display: flex;
@@ -5,7 +6,7 @@ ul.nav > li > a {
 }
 
 ul.navbar-nav > :first-child{
-    margin-top: 30%;
+    margin-top: 5rem;
 }
 
 a>div{
