@@ -7,6 +7,7 @@ import { EditUserComponent } from './edit-user/edit-user.component';
 import { UsersComponent } from './users/users.component';
 import { ListUserComponent } from './list-user/list-user.component';
 import { FormsModule } from '@angular/forms';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 
@@ -20,8 +21,16 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     UsersRoutingModule,
-    FormsModule
+    FormsModule,
+    SharedModule
     
   ]
 })
-export class UsersModule { }
+export class UsersModule {
+
+  userData: any[] = [];
+
+  receiveData(data: any[]): void {
+    this.userData = data;
+  }
+ }

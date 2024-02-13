@@ -1,0 +1,48 @@
+.pagination{
+    display: flex;
+    justify-content: end;
+    align-items: baseline;
+    margin-top: 2rem;
+}
+
+div > input{
+    width: 3rem;
+    text-align: center;
+    border-radius: 0;
+    height: 30px;
+}
+
+div > button {
+    width: 3rem;
+    line-height: 1.5;
+    -webkit-appearance: none;
+    appearance: none;
+    background-clip: padding-box;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+button{
+    height: 30px;
+    background-color: #f8f9fa !important;
+}
+
+button.chevron-double-right{
+    border-radius: 0px 10px 10px 0px;
+}
+
+button.chevron-left{
+    border-radius: 10px 0px 0px 10px;
+}
+
+i {
+    font-size: 12px;
+}
+
+button:hover{
+    background-color: #fff;
+    box-shadow: 0 0 0 0.1rem #0c94e41f;
+    border-color: #8695fe52;
+    outline: 0;
+    
+}

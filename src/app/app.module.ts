@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from './shared/shared.module';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
-import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { NgApexchartsModule } from 'ng-apexcharts';
 
 @NgModule({
@@ -20,7 +19,7 @@ import { NgApexchartsModule } from 'ng-apexcharts';
     SharedModule,
     DashboardModule,
     NgApexchartsModule,
-    
+    FormsModule,
 
   ],
   bootstrap: [AppComponent]
