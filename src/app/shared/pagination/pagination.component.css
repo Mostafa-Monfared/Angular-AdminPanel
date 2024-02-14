@@ -12,8 +12,15 @@ div > input{
     border-radius: 0;
     height: 30px;
     border: var(--bs-border-width) solid #daecff;
-
 }
+
+div > input:hover,
+div > input:focus{
+    background-color:#ffffff;
+    box-shadow: 0 0 0 0.1rem #ffff;
+    border-color: #8695fe52;
+    color: var(--bs-body-color);
+    outline: 0;}
 
 div > button {
     width: 3rem;
