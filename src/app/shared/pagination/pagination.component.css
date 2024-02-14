@@ -8,8 +8,11 @@
 div > input{
     width: 3rem;
     text-align: center;
+    line-height: 1.5;
     border-radius: 0;
     height: 30px;
+    border: var(--bs-border-width) solid #daecff;
+
 }
 
 div > button {
@@ -18,31 +21,29 @@ div > button {
     -webkit-appearance: none;
     appearance: none;
     background-clip: padding-box;
-    border: var(--bs-border-width) solid var(--bs-border-color);
+    border: var(--bs-border-width) solid #daecff;
     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 button{
     height: 30px;
-    background-color: #f8f9fa !important;
+    background-color: #ffffff !important;
 }
 
 button.chevron-double-right{
     border-radius: 0px 10px 10px 0px;
+    border-left: none !important;
 }
 
 button.chevron-left{
     border-radius: 10px 0px 0px 10px;
+    border-right: none !important;
+}
+
+button.chevron-right{
+    border-left: none !important;
 }
 
 i {
     font-size: 12px;
-}
-
-button:hover{
-    background-color: #fff;
-    box-shadow: 0 0 0 0.1rem #0c94e41f;
-    border-color: #8695fe52;
-    outline: 0;
-    
 }
