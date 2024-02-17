@@ -58,4 +58,21 @@ export class PaginationComponent implements OnInit{
     return this.data.slice(startIndex, endIndex);
   }
 
+  validatePaginationInput(event: KeyboardEvent): any {
+  const inputValue = (event.target as HTMLInputElement).value;
+  const isNumeric = /^\d+$/.test(inputValue);
+
+  if (inputValue === '') {
+    return; 
+  }
+  
+  if (!isNumeric) {
+    event.preventDefault(); 
+    alert('لطفاً فقط عدد وارد کنید.');
+  }
+}
+
+onEnter(): void {
+    alert('کلید Enter فشرده شد!');
+  }
 }
