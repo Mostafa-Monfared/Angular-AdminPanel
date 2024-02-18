@@ -28,9 +28,4 @@ import { SharedModule } from 'src/app/shared/shared.module';
 })
 export class UsersModule {
 
-  userData: any[] = [];
-
-  receiveData(data: any[]): void {
-    this.userData = data;
-  }
  }

@@ -6,6 +6,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from './shared/shared.module';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
 import { NgApexchartsModule } from 'ng-apexcharts';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ApiInterceptor } from './core/interceptors/api.interceptors';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,9 @@ import { NgApexchartsModule } from 'ng-apexcharts';
     NgApexchartsModule,
     FormsModule,
 
+  ],
+  providers:[
+    { provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })

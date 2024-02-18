@@ -7,7 +7,7 @@ import { User } from "../states/users/user.model";
 import { DataServiceError } from "./data-error.service";
 
 
-@Injectable()
+@Injectable({ providedIn: "root" })
 export class UserDataService {
 
   apiUrlBase = environment.apiUrlBase;
