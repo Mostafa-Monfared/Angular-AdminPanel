@@ -7,9 +7,19 @@ export class ValidationService {
         const config: any = {
             'required': 'Required',
             'invalidEmailAddress': 'Invalid email address',
-            'invalidPassword': 'Invalid password. Password must be at least 6 characters long, and contain a number.'
+            'invalidPassword': 'Invalid password. Password must be at least 6 characters long, and contain a number.',
+            'invalidMobileNumber' : 'Invalid mobile number'
         };
         return config[code];
+    }
+
+    static mobileNumberValidator(control: AbstractControl) {
+        // match with numbers like 09123456789
+        if (control.value.match(/^0?9[0-9]{9}$/)) {
+            return null;
+        } else {
+            return { 'invalidMobileNumber': true };
+        }
     }
 
     static emailValidator(control: AbstractControl) {
