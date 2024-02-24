@@ -21,6 +21,17 @@ export class ValidationService {
             return { 'invalidMobileNumber': true };
         }
     }
+    // (?<= |^)@[\w\d]+
+
+    static userNameValidator(control: AbstractControl) {
+        // match with user name have underline or letter
+        if (control.value.match(/^(?<= |^)@[\w\d]+$/)) {
+            return null;
+        } else {
+            return { 'invalidUserName': true };
+        }
+    }
+
 
     static emailValidator(control: AbstractControl) {
         // RFC 2822 compliant regex

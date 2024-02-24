@@ -6,63 +6,34 @@
                     <div class="col-12 ">
                         <div class="card widget-card border-light shadow-sm mt-5">
                             <div class="card-body p-4 ">
-                                <form class="row g-3" (ngSubmit)="submitForm()" #passwordForm="ngForm">
+                                <form class="row g-3" [formGroup]="addUserForm" (ngSubmit)="submitForm()" #passwordForm="ngForm">
                                     <div class="col-md-6">
-                                        <label for="inputEmail4" class="form-label">نام و نام خانوادگی*</label>
-                                        <input type="text" class="input-form-control" id="inputEmail4" required>
+                                        <label for="name" class="form-label">نام*</label>
+                                        <input type="text" class="input-form-control" id="name" required>
                                     </div>
                                     <div class="col-md-6">
-                                        <label for="inputEmail4" class="form-label">نام کاربری*</label>
-                                        <input type="text" class="input-form-control" id="inputEmail4">
-                                    </div>
-                                    <!-- <div class="col-md-6">
-                                        <label for="password">رمز عبور*</label>
-                                        <input type="password" id="password" class="input-form-control  "
-                                            name="password" [(ngModel)]="password" #passwordInput="ngModel" required
-                                            [pattern]="passwordRegex"
-                                            [ngClass]="{ 'input-error': passwordInput.invalid && (passwordInput.dirty || passwordInput.touched) }">
-                                        <div
-                                            *ngIf="passwordInput.invalid && (passwordInput.dirty || passwordInput.touched)">
-                                            <div class="error-message" *ngIf="passwordInput.errors?.required">رمز عبور
-                                                الزامی است.</div>
-                                            <div class="error-message" *ngIf="passwordInput.errors?.pattern">رمز عبور
-                                                باید حداقل شامل یک حرف
-                                                بزرگ، یک حرف کوچک و یک عدد باشد و حداقل 8 کاراکتر داشته باشد.</div>
-                                        </div>
+                                        <label for="name" class="form-label">نام خانوادگی*</label>
+                                        <input type="text" class="input-form-control" id="name" required>
                                     </div>
                                     <div class="col-md-6">
-                                        <label for="confirmPassword">تکرار رمز عبور*</label>
-                                        <input type="password" id="confirmPassword" name="confirmPassword"
-                                            class="input-form-control"
-                                            [ngClass]="{ 'input-error': confirmPasswordInput.invalid && (confirmPasswordInput.dirty || confirmPasswordInput.touched) }"
-                                            [(ngModel)]="confirmPassword" #confirmPasswordInput="ngModel" required
-                                            [pattern]="password">
-                                        <div *ngIf="confirmPasswordInput.invalid && (confirmPasswordInput.dirty || confirmPasswordInput.touched)"
-                                            class="error">
-                                            <div *ngIf="confirmPasswordInput.errors?.required" class="error-message">
-                                                تکرار رمز عبور الزامی
-                                                است.</div>
-                                            <div *ngIf="confirmPasswordInput.errors?.pattern" class="error-message">رمز
-                                                عبور و تکرار آن باید
-                                                یکسان باشند.</div>
-                                        </div>
-                                    </div> -->
+                                        <label for="userName" class="form-label">نام کاربری*</label>
+                                        <input type="text" class="input-form-control" id="userName">
+                                    </div>
                                     <div class="col-6">
-                                        <label for="inputAddress" class="form-label">نام پدر *</label>
-                                        <input type="text" class="input-form-control" id="inputAddress"
-                                            placeholder="09">
+                                        <label for="fatherName" class="form-label">نام پدر *</label>
+                                        <input type="text" class="input-form-control" id="fatherName">
                                     </div>
                                     <div class="col-md-6">
-                                        <label for="inputCity" class="form-label">تاریخ تولد*</label>
-                                        <input type="email" class="input-form-control" id="inputCity">
+                                        <label for="birthDay" class="form-label">تاریخ تولد*</label>
+                                        <input type="email" class="input-form-control" id="birthDay">
                                     </div>
                                     <div class="col-md-6">
-                                        <label for="inputCity" class="form-label"> کد ملی*</label>
-                                        <input type="email" class="input-form-control" id="inputCity">
+                                        <label for="nationalCode" class="form-label">کد ملی*</label>
+                                        <input type="email" class="input-form-control" id="nationalCode">
                                     </div>
                                     <div class="col-md-6">
-                                        <label for="inputState" class="form-label">جنسیت*</label>
-                                        <select id="inputState" class="form-select-control form-select">
+                                        <label for="gender" class="form-label">جنسیت*</label>
+                                        <select id="gender" class="form-select-control form-select">
                                             <option selected>انتخاب کنید</option>
                                             <option> مرد</option>
                                             <option> زن</option>
@@ -73,7 +44,7 @@
                                         <input type="text" class="input-form-control" id="inputCity">
                                     </div>
                                     <div class="col-6">
-                                        <label for="inputCity" class="form-label">شماره تلفن*</label>
+                                        <label for="inputCity" class="form-label">تلفن همراه*</label>
                                         <input type="text" class="input-form-control" id="inputCity">
                                     </div>
                                     <div class="col-md-6">
@@ -92,12 +63,12 @@
                                         </select>
                                     </div>
                                     <div class="col-12">
-                                        <label for="inputCity" class="form-label">آدرس*</label>
-                                        <textarea name="inputCity" class="textarea-form-control" id="inputCity" cols="5" rows="2"></textarea>
+                                        <label for="province" class="form-label">آدرس*</label>
+                                        <textarea name="inputCity" class="textarea-form-control" id="province" cols="5" rows="2"></textarea>
                                     </div>
                                     <div class="col-12 text-left mt-5 ">
                                         <button class="btn btn-outline-danger  btn-small" type="submit"
-                                            (click)="onUsers($event)">
+                                            (click)="onCancel($event)">
                                             انصراف</button>
                                         <button type="submit" class="mr-10 btn btn-small btn-outline-primary"
                                             [disabled]="passwordForm.invalid">ثبت کاربر</button>
