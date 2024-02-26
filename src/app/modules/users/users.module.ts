@@ -8,6 +8,8 @@ import { UsersComponent } from './users/users.component';
 import { ListUserComponent } from './list-user/list-user.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ControlMessagesComponent } from 'src/app/shared/control-message/control-message-component';
+import { AppComponent } from 'src/app/app.component';
 
 
 
@@ -17,7 +19,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AddUserComponent,
     EditUserComponent,
     UsersComponent,
-    ListUserComponent
+    ListUserComponent,
+    ControlMessagesComponent
+
   ],
   imports: [
     CommonModule,

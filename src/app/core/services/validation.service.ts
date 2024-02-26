@@ -1,30 +1,36 @@
-// Original version created by Cory Rylan: https://coryrylan.com/blog/angular-2-form-builder-and-validation-management
 import { AbstractControl } from '@angular/forms';
 
 export class ValidationService {
 
-    static getValidatorErrorMessage(code: string) {
+    static getValidatorErrorMessage(code: string, validatorValue?: any) {
         const config: any = {
-            'required': 'Required',
-            'invalidEmailAddress': 'Invalid email address',
+            'required': 'این فیلد اجباریست',
+            'invalidEmailAddress': 'لطفا قالب ایمیل خود را به درستی وارد کنید',
             'invalidPassword': 'Invalid password. Password must be at least 6 characters long, and contain a number.',
-            'invalidMobileNumber' : 'Invalid mobile number'
+            'invalidMobileNumber': 'شماره تلفن باید با 09 شروع شده و 11 رقم باشد',
+            'invalidnationalCode': 'کد ملی باید 10 رقم باشد',
+            'invalidUserName': 'نام کاربری باید به صورت لاتین باشد و با @ شروع شود'
         };
         return config[code];
     }
 
     static mobileNumberValidator(control: AbstractControl) {
-        // match with numbers like 09123456789
         if (control.value.match(/^0?9[0-9]{9}$/)) {
             return null;
         } else {
             return { 'invalidMobileNumber': true };
         }
     }
-    // (?<= |^)@[\w\d]+
+
+    static nationalCodeValidator(control: AbstractControl) {
+        if (control.value.match(/[0-9]{10}$/)) {
+            return null;
+        } else {
+            return { 'invalidnationalCode': true };
+        }
+    }
 
     static userNameValidator(control: AbstractControl) {
-        // match with user name have underline or letter
         if (control.value.match(/^(?<= |^)@[\w\d]+$/)) {
             return null;
         } else {
@@ -34,8 +40,6 @@ export class ValidationService {
 
 
     static emailValidator(control: AbstractControl) {
-        // RFC 2822 compliant regex
-        // tslint:disable-next-line
         if (control.value.match(/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/)) {
             return null;
         } else {
@@ -44,10 +48,6 @@ export class ValidationService {
     }
 
     static passwordValidator(control: AbstractControl) {
-        // {6,100}           - Assert password is between 6 and 100 characters
-        // (?=.*[0-9])       - Assert a string has at least one number
-        // (?!.*\s)          - Spaces are not allowed
-        // tslint:disable-next-line
         if (control.value.match(/^(?=.*\d)(?=.*[a-zA-Z!@#$%^&*])(?!.*\s).{6,100}$/)) {
             return null;
         } else {
