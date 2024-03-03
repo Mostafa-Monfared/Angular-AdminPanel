@@ -6,36 +6,36 @@
                     <div class="col-12 ">
                         <div class="card widget-card border-light shadow-sm mt-5">
                             <div class="card-body p-4 ">
-                                <form class="row g-3" [formGroup]="addUserForm" (ngSubmit)="submitForm()" #passwordForm="ngForm">
+                                <form class="row g-3"  (ngSubmit)="addUser()" [formGroup]="userForm">
                                     <div class="col-md-6">
                                         <label for="name" class="form-label">نام *</label>
-                                        <input type="text" class="input-form-control" id="name" required>
+                                        <input type="text" formControlName="name"  class="input-form-control" id="name" required>
                                     </div>
                                     <div class="col-md-6">
-                                        <label for="name" class="form-label">نام خانوادگی *</label>
-                                        <input type="text" class="input-form-control" id="family" required>
+                                        <label for="family" class="form-label">نام خانوادگی *</label>
+                                        <input type="text" formControlName="family" class="input-form-control" id="family" required>
                                     </div>
                                     <div class="col-md-6">
                                         <label for="userName" class="form-label">نام کاربری *</label>
-                                        <input type="text" formControlName="username" class="input-form-control" id="userName">
-                                        <control-messages [control]="addUserForm.controls.username"></control-messages>
+                                        <input type="text" formControlName="userName" class="input-form-control" id="userName">
+                                        <control-messages [control]="userForm.controls.username"></control-messages>
                                     </div>
                                     <div class="col-6">
                                         <label for="fatherName" class="form-label">نام پدر *</label>
-                                        <input type="text" class="input-form-control" id="fatherName">
+                                        <input type="text" formControlName="fatherName" class="input-form-control" id="fatherName">
                                     </div>
                                     <div class="col-md-6">
                                         <label for="birthDay" class="form-label">تاریخ تولد *</label>
-                                        <input type="text" class="input-form-control" id="birthDay">
+                                        <input type="text" formControlName="birthDay" class="input-form-control" id="birthDay">
                                     </div>
                                     <div class="col-md-6">
                                         <label for="nationalCode" class="form-label">کد ملی *</label>
                                         <input type="text" formControlName="nationalCode" class="input-form-control" id="nationalCode">
-                                        <control-messages [control]="addUserForm.controls.nationalCode"></control-messages>
+                                        <control-messages [control]="userForm.controls.nationalCode"></control-messages>
                                     </div>
                                     <div class="col-md-6">
                                         <label for="gender" class="form-label">جنسیت *</label>
-                                        <select id="gender" class="form-select-control form-select">
+                                        <select id="gender" formControlName="gender" class="form-select-control form-select">
                                             <option selected>انتخاب کنید</option>
                                             <option> مرد</option>
                                             <option> زن</option>
@@ -44,40 +44,53 @@
                                     <div class="col-6">
                                         <label for="email" class="form-label">ایمیل *</label>
                                         <input type="email"  formControlName="email" class="input-form-control" id="inputEmail">
-                                        <control-messages [control]="addUserForm.controls.email"></control-messages>
+                                        <control-messages [control]="userForm.controls.email"></control-messages>
                                     </div>
                                     <div class="col-6">
                                         <label for="mobileNumber" class="form-label">تلفن همراه *</label>
                                         <input formControlName="mobileNumber" type="text" class="input-form-control" id="inputmobileNumber">
-                                        <control-messages [control]="addUserForm.controls.mobileNumber"></control-messages>
+                                        <control-messages [control]="userForm.controls.mobileNumber"></control-messages>
                                     </div>
                                     <div class="col-md-6">
-                                        <label for="inputState" class="form-label">وضعیت *</label>
-                                        <select id="inputState" class="form-select-control form-select">
+                                        <label for="status" class="form-label">وضعیت *</label>
+                                        <select id="inputState" formControlName="status" class="form-select-control form-select">
                                             <option selected>انتخاب کنید</option>
-                                            <option>فعال</option>
-                                            <option>غیر فعال</option>
+                                            <option value="active">فعال</option>
+                                            <option value="inactive">غیر فعال</option>
                                         </select>
                                     </div>
                                     <div class="col-md-6">
-                                        <label for="inputCity" class="form-label">شهر *</label>
-                                        <select id="inputCity" class="form-select-control form-select">
+                                        <label for="province" class="form-label">شهر *</label>
+                                        <select id="inputCity" formControlName="province" class="form-select-control form-select">
                                             <option selected>انتخاب کنید</option>
                                             <option>...</option>
                                         </select>
                                     </div>
                                     <div class="col-12">
-                                        <label for="province" class="form-label">آدرس *</label>
-                                        <textarea name="inputAddress" class="textarea-form-control" id="province" cols="5" rows="2"></textarea>
+                                        <label for="address" class="form-label">آدرس *</label>
+                                        <textarea name="inputAddress" formControlName="address" class="textarea-form-control" id="address" cols="5" rows="2"></textarea>
                                     </div>
                                     <div class="col-12 text-left mt-5 ">
                                         <button class="btn btn-outline-danger  btn-small" type="submit"
                                             (click)="onCancel($event)">
                                             انصراف</button>
                                         <button type="submit" class="mr-10 btn btn-small btn-outline-primary"
-                                            >ثبت کاربر</button>
+                                          >ثبت کاربر</button>
                                     </div>
                                 </form>
+
+
+                                <div *ngIf="users.length > 0; else noUsers">
+                                    <h2>User List</h2>
+                                    <ul>
+                                      <li *ngFor="let user of users">
+                                        {{ user.name }} - {{ user.email }}
+                                      </li>
+                                    </ul>
+                                  </div>
+                                  <ng-template #noUsers>
+                                    <p>No users found.</p>
+                                  </ng-template>
                             </div>
                         </div>
                     </div>
