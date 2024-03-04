@@ -9,7 +9,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "watch": "ng build --watch --configuration development",
-    "api": "json-server api/db.json --routes api/routes.json --no-cors=true"
+    "api": "json-server api/db.json --routes api/routes.json --no-cors=true",
+    "json-server": "json-server  api/db.json --watch db.json --port 3000 --host localhost"
   },
   "private": true,
   "dependencies": {

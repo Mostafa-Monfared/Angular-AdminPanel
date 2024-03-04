@@ -15,7 +15,7 @@ export class ValidationService {
     }
 
     static mobileNumberValidator(control: AbstractControl) {
-        if (control.value.match(/^0?9[0-9]{9}$/)) {
+        if (control.value && control.value.match(/^0?9[0-9]{9}$/)) {
             return null;
         } else {
             return { 'invalidMobileNumber': true };
@@ -23,7 +23,7 @@ export class ValidationService {
     }
 
     static nationalCodeValidator(control: AbstractControl) {
-        if (control.value.match(/[0-9]{10}$/)) {
+        if (control.value && control.value.match(/[0-9]{10}$/)) {
             return null;
         } else {
             return { 'invalidnationalCode': true };
@@ -31,7 +31,7 @@ export class ValidationService {
     }
 
     static userNameValidator(control: AbstractControl) {
-        if (control.value.match(/^(?<= |^)@[\w\d]+$/)) {
+        if (control.value && control.value.match(/^(?<= |^)@[\w\d]+$/)) {
             return null;
         } else {
             return { 'invalidUserName': true };
@@ -40,7 +40,7 @@ export class ValidationService {
 
 
     static emailValidator(control: AbstractControl) {
-        if (control.value.match(/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/)) {
+        if (control.value && control.value.match(/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/)) {
             return null;
         } else {
             return { 'invalidEmailAddress': true };
@@ -48,7 +48,7 @@ export class ValidationService {
     }
 
     static passwordValidator(control: AbstractControl) {
-        if (control.value.match(/^(?=.*\d)(?=.*[a-zA-Z!@#$%^&*])(?!.*\s).{6,100}$/)) {
+        if (control.value && control.value.match(/^(?=.*\d)(?=.*[a-zA-Z!@#$%^&*])(?!.*\s).{6,100}$/)) {
             return null;
         } else {
             return { 'invalidPassword': true };

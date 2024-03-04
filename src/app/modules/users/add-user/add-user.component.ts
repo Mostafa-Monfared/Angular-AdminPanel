@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { catchError, map, tap } from 'rxjs/operators';
 import { UserDataService } from 'src/app/core/services/user-data.service';
 import { ValidationService } from 'src/app/core/services/validation.service';
 import { User } from 'src/app/core/states/users/user.model';
@@ -14,59 +16,46 @@ import { User } from 'src/app/core/states/users/user.model';
 export class AddUserComponent implements OnInit {
 
   userForm: FormGroup;
-  user : User = new User();
-  users: User[] = [];
+  submitDisabled : boolean;
 
-
-  constructor(private router: Router, private formBuilder: FormBuilder , private userDataService : UserDataService, private http: HttpClient) {
-    this.initForm();
+  constructor(private router: Router, private formBuilder: FormBuilder , private userDataService : UserDataService) {
+    this.initUserForm();
   }
 
-  initForm(): void {
+  initUserForm(): void {
     this.userForm = this.formBuilder.group({
-      'name': ['', Validators.required],
-      'family': ['', Validators.required],
-      'userName': ['', [Validators.required, ValidationService.userNameValidator]],
-      'fatherName': ['', Validators.required],
-      'gender': ['', Validators.required],
-      'email': ['', [Validators.required, ValidationService.emailValidator]],
-      'mobileNumber': ['', [Validators.required, ValidationService.mobileNumberValidator]],
-      'nationalCode': ['', [Validators.required, ValidationService.nationalCodeValidator]],
-      'status': ['', Validators.required],
-      'address': ['', Validators.required],
-      'birthDay': ['', Validators.required],
-      'province': ['', Validators.required]
+      name: ['', Validators.required],
+      family: ['', Validators.required],
+      fatherName: ['', Validators.required],
+      gender: ['', Validators.required],
+      status: ['', Validators.required],
+      address: ['', Validators.required],
+      birthDay: ['', Validators.required],
+      province: ['', Validators.required],
+      userName: ['', [Validators.required, ValidationService.userNameValidator]],
+      email: ['', [Validators.required, ValidationService.emailValidator]],
+      mobileNumber: ['', [Validators.required, ValidationService.mobileNumberValidator]],
+      nationalCode: ['', [Validators.required, ValidationService.nationalCodeValidator]],
     });
   }
 
   ngOnInit() {
-     this.buildForm();
-    this.initForm();
-
   }
 
-addUser(): any {
-    const userData: User = this.userForm.value;
-    this.userDataService.addUser(userData).subscribe(
-      (newUser: User) => {
-        console.log('User added successfully:', newUser);
-        this.userForm.reset(); // پاک کردن فرم بعد از افزوده شدن کاربر
-      },
-      (error) => {
-        console.error('Error adding user:', error);
-      }
-    );
-}
-
-  buildForm() {
-
+addUser(): void {
+  const user: User = this.userForm.value;
+  this.userDataService.addUser(user).subscribe(
+    (newUser: User) => {
+      console.log('User added successfully:', newUser);
+      this.userForm.reset();
+    },
+    (error) => {
+      console.error('Error adding user:', error);
+    }
+  );
   }
 
   onCancel(event) {
     this.router.navigateByUrl('layout/users');
-  }
-
-  submitForm() {
-    
   }
 }

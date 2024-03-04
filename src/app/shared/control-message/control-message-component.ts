@@ -4,7 +4,8 @@ import { ValidationService } from 'src/app/core/services/validation.service';
 
 @Component({
   selector: 'control-messages',
-  template: `<div *ngIf="errorMessage !== null">{{errorMessage}}</div>
+  template: `
+  <div *ngIf="errorMessage !== null">{{errorMessage}}</div>
       <style>
       div {
         color: #dc4035;
@@ -17,12 +18,13 @@ export class ControlMessagesComponent {
   constructor() { }
 
   get errorMessage() {
-    for (let propertyName in this.control.errors) {
-      if (this.control.errors.hasOwnProperty(propertyName) && this.control.touched) {
-        return ValidationService.getValidatorErrorMessage(propertyName, this.control.errors[propertyName]);
+    if (this.control && this.control.errors && this.control.touched) {
+      for (let propertyName in this.control.errors) {
+        if (this.control.errors.hasOwnProperty(propertyName)) {
+          return ValidationService.getValidatorErrorMessage(propertyName, this.control.errors[propertyName]);
+        }
       }
     }
-
     return null;
   }
 }

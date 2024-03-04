@@ -1,33 +1,49 @@
 {
-    "users":[
+  "users": [
     {
-          "id": 1,
-          "name": "محمد",
-          "family":"دهقانی",
-          "userName":"mohammad",
-          "fatherName": "ali",
-          "birthDay" : "13750101",
-          "nationalCode" :4280808080,
-          "gender" :"maile",
-          "email" :"dehqani@gmail.com",
-          "mobileNumber" : "09039771619",
-          "status" : "Aa",
-          "province" :"zanjan",
-          "address" : "زنجان-پلاک 10"
+      "id": "1",
+      "name": "محمد",
+      "family": "دهقانی",
+      "userName": "mohammad",
+      "fatherName": "ali",
+      "birthDay": "13750101",
+      "nationalCode": 4280808080,
+      "gender": "maile",
+      "email": "dehqani@gmail.com",
+      "mobileNumber": "09039771619",
+      "status": "Aa",
+      "province": "zanjan",
+      "address": "زنجان-پلاک 10"
     },
     {
-        "id": 2,
-        "name": "مصطفی",
-        "family":"اسماعیلی",
-        "userName":"mostafa",
-        "fatherName": "hosein",
-        "birthDay" : "13730903",
-        "nationalCode" :4270912855,
-        "gender" :"maile",
-        "email" :"monfared@gmail.com",
-        "mobileNumber" : "09194669919",
-        "status" : "aa",
-        "province" :"zanjan",
-        "address" : "زنجان-پلاک 10"
-  }]
+      "id": "2",
+      "name": "مصطفی",
+      "family": "اسماعیلی",
+      "userName": "mostafa",
+      "fatherName": "hosein",
+      "birthDay": "13730903",
+      "nationalCode": 4270912855,
+      "gender": "maile",
+      "email": "monfared@gmail.com",
+      "mobileNumber": "09194669919",
+      "status": "aa",
+      "province": "zanjan",
+      "address": "زنجان-پلاک 10"
+    },
+    {
+      "name": "محمد ",
+      "family": "دهقانی",
+      "fatherName": "عیسی",
+      "gender": "male",
+      "status": "active",
+      "address": "zanjan",
+      "birthDay": "13771414",
+      "province": "زنجان",
+      "userName": "@mdehgani",
+      "email": "dehgani89@gmail.com",
+      "mobileNumber": "09039771619",
+      "nationalCode": "4271165166",
+      "id": "gAsBMwU"
+    }
+  ]
 }

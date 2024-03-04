@@ -1,15 +1,15 @@
-export class User {
+export interface User {
     id: number;
-    name: string;
+    name : string;
     family :string;
-    userN744ame :string;
+    userName :string;
     fatherName : string;
-    gender : string;
-    email: string;
-    mobileNumber : string;
-    nationalCode :string;
-    status : string;
-    address :string;
     birthDay : string;
+    nationalCode :string;
+    gender : string;
+    email : string;
+    mobileNumber : string;
+    status : boolean;
     province : string;
+    address :string;
   }
