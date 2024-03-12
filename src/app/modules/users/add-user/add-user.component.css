@@ -8,3 +8,9 @@
     box-shadow: 0 0 0 0.15rem #ff393938;
   }
   
+
+  ::ng-deep .day{
+    font-size: 18px!important;
+  }
+
+  

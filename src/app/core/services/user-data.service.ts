@@ -3,18 +3,26 @@ import { throwError, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { catchError, map } from 'rxjs/operators';
 import { User } from "../states/users/user.model";
+import { Province } from "../states/province/province-model";
 
 
 @Injectable({ providedIn: "root" })
 export class UserDataService {
 
     private apiUrl = 'users';
-
+    private provinceUrl = 'province';
 
   constructor(private http: HttpClient) {}
 
   getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(`${this.apiUrl}`)
+    return this.http.get<User[]>(this.apiUrl)
+    .pipe(
+      catchError(this.handleError)
+    );
+  }
+
+  getProvince(): Observable<Province[]> {
+    return this.http.get<Province[]>(this.provinceUrl)
     .pipe(
       catchError(this.handleError)
     );

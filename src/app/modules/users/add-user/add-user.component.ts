@@ -7,6 +7,8 @@ import { catchError, map, tap } from 'rxjs/operators';
 import { UserDataService } from 'src/app/core/services/user-data.service';
 import { ValidationService } from 'src/app/core/services/validation.service';
 import { User } from 'src/app/core/states/users/user.model';
+import * as moment from 'moment';
+import { Province } from 'src/app/core/states/province/province-model';
 
 @Component({
   selector: 'app-add-user',
@@ -17,6 +19,9 @@ export class AddUserComponent implements OnInit {
 
   userForm: FormGroup;
   submitDisabled : boolean;
+  provinces: Province[] = [];
+
+
 
   constructor(private router: Router, private formBuilder: FormBuilder , private userDataService : UserDataService) {
     this.initUserForm();
@@ -40,10 +45,14 @@ export class AddUserComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getProvince();
   }
 
 addUser(): void {
+
   const user: User = this.userForm.value;
+  user.birthDay = moment(user.birthDay, 'jYYYY/jMM/jDD').format('YYYYMMDD');
+  
   this.userDataService.addUser(user).subscribe(
     (newUser: User) => {
       console.log('User added successfully:', newUser);
@@ -53,6 +62,20 @@ addUser(): void {
       console.error('Error adding user:', error);
     }
   );
+  }
+
+  getProvince(): void {
+    this.userDataService.getProvince()
+      .subscribe(
+        provinces => {
+          this.provinces = provinces.map(province => {
+            return { ...province};
+          });
+        },
+        error => {
+          console.error('Error fetching users:', error);
+        }
+      );
   }
 
   onCancel(event) {

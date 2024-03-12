@@ -6,7 +6,7 @@
                     <div class="col-12 ">
                         <div class="card widget-card border-light shadow-sm mt-5">
                             <div class="card-body p-4 ">
-                                <form class="row g-3" [formGroup]="userForm" (ngSubmit)="addUser()">
+                                <form class="row g-3" ngModel="test" [formGroup]="userForm" (ngSubmit)="addUser()">
                                     <div class="col-md-6">
                                         <label for="name" class="form-label">نام *</label>
                                         <input type="text" formControlName="name"  class="input-form-control" id="name" required>
@@ -26,7 +26,8 @@
                                     </div>
                                     <div class="col-md-6">
                                         <label for="birthDay" class="form-label">تاریخ تولد *</label>
-                                        <input type="text" formControlName="birthDay" class="input-form-control" id="birthDay">
+                                        <!-- <input type="text" formControlName="birthDay" class="input-form-control" id="birthDay"> -->
+                                        <persian-date-ranger [inputClass]="'input-form-control'" formControlName="birthDay"></persian-date-ranger>
                                     </div>
                                     <div class="col-md-6">
                                         <label for="nationalCode" class="form-label">کد ملی *</label>
@@ -57,10 +58,10 @@
                                             <option value="inactive">غیر فعال</option>
                                         </select>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-6" >
                                         <label for="province" class="form-label">شهر *</label>
-                                        <select id="inputCity" formControlName="province" class="form-select-control form-select">
-                                            <option value="زنجان">زنجان</option>
+                                        <select id="inputCity"  formControlName="province" class="form-select-control form-select">
+                                            <option *ngFor="let province of provinces" [value]="province.name">{{ province.name }}</option>
                                         </select>
                                     </div>
                                     <div class="col-12">
@@ -72,7 +73,7 @@
                                             (click)="onCancel($event)">
                                             انصراف</button>
                                         <button type="submit" class="mr-10 btn btn-small btn-outline-primary"
-                                        [disabled]="!userForm.valid" >ثبت کاربر</button>
+                                        [disabled]="!userForm.valid">ثبت کاربر</button>
                                     </div>
                                 </form>
                                 </div>

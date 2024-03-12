@@ -6,7 +6,7 @@
             <div class="col-12">
               <div class="card widget-card border-light shadow-sm">
                 <div class="card-body">
-                  <table class="table">
+                  <table class="table" >
                     <thead>
                       <tr>
                         <th scope="col">ردیف</th>
@@ -18,28 +18,16 @@
                         <th scope="col" class="text-center">عملیات</th>
                       </tr>
                     </thead>
-                    <tbody>
+                    <tbody *ngFor="let user of users">
                       <tr>
-                        <th scope="row">1</th>
-                        <td>محمد</td>
-                        <td>دهقانی</td>
-                        <td>@dehqni</td>
-                        <td>@dehqni</td>
-                        <td>@dehqni</td>
+                        <td scope="row">{{user.rowNumber}}</td>
+                        <td>{{ user.name }}</td>
+                        <td>{{ user.family }}</td>
+                        <td>{{user.userName}}</td>
+                        <td>{{user.province}}</td>
+                        <td>{{user.status}}</td>
                         <td class="text-center">
-                            <a href=""><i class="bi bi-pencil-square text-warning tbl-icon"></i></a>
-                            <a href=""><i class="bi bi-trash tbl-icon text-danger"></i></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>مصطفی</td>
-                        <td>اسماعیلی</td>
-                        <td>@monfared</td>
-                        <td>@monfared</td>
-                        <td>@monfared</td>
-                        <td class="text-center">
-                            <a href=""><i class="bi bi-pencil-square text-warning tbl-icon"></i></a>
+                            <a href="" (click)="onEditUser($event)"><i class="bi bi-pencil-square text-warning tbl-icon"></i></a>
                             <a href=""><i class="bi bi-trash tbl-icon text-danger"></i></a>
                         </td>
                       </tr>

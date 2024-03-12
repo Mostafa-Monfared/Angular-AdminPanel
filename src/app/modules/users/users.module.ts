@@ -10,6 +10,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ControlMessagesComponent } from 'src/app/shared/control-message/control-message-component';
 import { AppComponent } from 'src/app/app.component';
+import { PersianDateRangerModule } from 'persian-date-ranger';
 
 
 
@@ -28,7 +29,8 @@ import { AppComponent } from 'src/app/app.component';
     UsersRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
+    PersianDateRangerModule
     
   ]
 })
