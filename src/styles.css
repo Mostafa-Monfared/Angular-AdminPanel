@@ -57,6 +57,11 @@ div>label {
 
 }
 
+input {
+    direction: ltr;
+    text-align: right;
+}
+
 input:focus,
 textarea:focus,
 select.form-select-control:focus {
