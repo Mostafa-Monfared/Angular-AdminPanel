@@ -17,8 +17,11 @@
                                     </div>
                                     <div class="col-md-6">
                                         <label for="userName" class="form-label">نام کاربری *</label>
-                                        <input type="text" formControlName="userName" class="input-form-control" id="userName">
-                                         <control-messages [control]="userForm.controls.userName"></control-messages>
+                                        <div class="username-input-area">
+                                            <input type="text" formControlName="userName" class="input-form-control" id="userName">
+                                            <span class="input-group-text" id="inputGroupPrepend2">@</span>
+                                        </div>
+                                        <control-messages [control]="userForm.controls.userName"></control-messages>
                                     </div>
                                     <div class="col-6">
                                         <label for="fatherName" class="form-label">نام پدر *</label>

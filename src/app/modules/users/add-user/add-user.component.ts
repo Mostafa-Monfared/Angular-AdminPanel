@@ -49,8 +49,8 @@ export class AddUserComponent implements OnInit {
   }
 
 addUser(): void {
-
   const user: User = this.userForm.value;
+  user.userName = "@" + user.userName;
   user.birthDay = moment(user.birthDay, 'jYYYY/jMM/jDD').format('YYYYMMDD');
   
   this.userDataService.addUser(user).subscribe(
