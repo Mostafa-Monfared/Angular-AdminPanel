@@ -55,6 +55,7 @@ addUser(): void {
   
   this.userDataService.addUser(user).subscribe(
     (newUser: User) => {
+      this.router.navigateByUrl('layout/users');
       console.log('User added successfully:', newUser);
       this.userForm.reset();
     },
