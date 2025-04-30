@@ -29,6 +29,9 @@
             "styles": [
               "src/styles.css"
             ],
+            "stylePreprocessorOptions": {
+             "includePaths": ["src"]
+            },
             "scripts": [],
             "server": "src/main.server.ts",
             "prerender": true,
@@ -97,5 +100,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "7c30b1b2-432f-4bde-87b7-c8e11a3d09f7"
   }
 }
